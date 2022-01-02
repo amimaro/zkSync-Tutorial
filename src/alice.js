@@ -50,7 +50,7 @@
     ethers
   );
   await utils.displayZkSyncBalance(aliceZkSyncWallet, ethers);
-  await utils.registerAccount(aliceZkSyncWallet);
+  await utils.registerAccount(aliceZkSyncWallet, token);
 
   console.log("Transferring");
   const transferFee = await utils.getFee(
