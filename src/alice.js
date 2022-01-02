@@ -86,4 +86,7 @@
     zksync,
     ethers
   );
+
+  console.log("Alice -- End");
+  process.exit();
 })();
