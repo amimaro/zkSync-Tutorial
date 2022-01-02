@@ -38,6 +38,7 @@ async function registerAccount(wallet) {
     const changePubkey = await wallet.setSigningKey();
     await changePubkey.awaitReceipt();
   }
+  console.log(`Account ${wallet.address()} registered`);
 }
 
 async function depositToZkSync(zkSyncWallet, token, amountToDeposit, ethers) {
