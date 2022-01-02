@@ -62,7 +62,7 @@
   );
   await utils.transfer(
     aliceZkSyncWallet,
-    process.env.BOB_ADDRESS,
+    process.env.BOB_ACTUAL_ADDRESS,
     amountToTransfer,
     transferFee,
     token,
