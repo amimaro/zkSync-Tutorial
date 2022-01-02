@@ -114,25 +114,25 @@ async function withdrawToEthereum(
   console.log("ZKP verification is complete");
 }
 
-async function displayZkSyncBalance(wallet, ethers) {
+async function displayZkSyncBalance(wallet, ethers, name) {
   const state = await wallet.getAccountState();
   if (state.committed.balances.ETH) {
     console.log(
       `Commited ETH balance for ${wallet.address()}: ${ethers.utils.formatEther(
         state.committed.balances.ETH
-      )}`
+      )}(${name})`
     );
   } else {
-    console.log(`Commited ETH balance for ${wallet.address()}: 0`);
+    console.log(`Commited ETH balance for ${wallet.address()}(${name}): 0`);
   }
   if (state.verified.balances.ETH) {
     console.log(
-      `Verified ETH balance for ${wallet.address()}: ${ethers.utils.formatEther(
+      `Verified ETH balance for ${wallet.address()}(${name}): ${ethers.utils.formatEther(
         state.verified.balances.ETH
       )}`
     );
   } else {
-    console.log(`Verified ETH balance for ${wallet.address()}: 0`);
+    console.log(`Verified ETH balance for ${wallet.address()}(${name}): 0`);
   }
 }
 
