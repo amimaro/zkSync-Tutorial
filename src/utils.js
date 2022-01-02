@@ -67,6 +67,7 @@ async function transfer(
   zksync,
   ethers
 ) {
+  console.log("transferFee", transferFee);
   const closestPackableAmount = zksync.utils.closestPackableTransactionAmount(
     ethers.utils.parseEther(amountToTransfer)
   );
@@ -90,7 +91,8 @@ async function getFee(transactionType, address, token, zkSyncProvider, ethers) {
     address,
     token
   );
-  return ethers.utils.formatEther(feeInWei.totalFee.toString());
+  // TODO: check why fee is not enough
+  return ethers.utils.formatEther((feeInWei.totalFee * 10).toString());
 }
 
 async function withdrawToEthereum(
