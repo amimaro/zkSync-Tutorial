@@ -2,6 +2,7 @@
   const ethers = require("ethers");
   const zksync = require("zksync");
   const utils = require("./utils");
+  const SLEEP_INTERVAL = process.env.SLEEP_INTERVAL || 5000;
   const token = "ETH";
   const amountToDeposit = "0.05";
   const amountToTransfer = "0.02";
@@ -34,6 +35,12 @@
     zkSyncProvider,
     zksync
   );
+
+  // Display balance
+  setInterval(async () => {
+    await utils.displayZkSyncBalance(aliceZkSyncWallet, ethers, "Alice");
+    console.log("---");
+  }, SLEEP_INTERVAL);
 
   console.log("Depositing");
   await utils.depositToZkSync(

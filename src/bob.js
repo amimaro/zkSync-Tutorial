@@ -29,13 +29,8 @@
     zksync
   );
 
-  process.on("SIGINT", () => {
-    console.log("Disconnecting");
-    // Disconnect
-    process.exit();
-  });
-  setInterval(async () => {
-    await utils.displayZkSyncBalance(bobZkSyncWallet, ethers);
+  setInterval(async () => {    
+    await utils.displayZkSyncBalance(bobZkSyncWallet, ethers, 'Bob');
     console.log("---");
   }, SLEEP_INTERVAL);
 })();
