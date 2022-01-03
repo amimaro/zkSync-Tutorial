@@ -123,12 +123,12 @@ async function displayZkSyncBalance(wallet, ethers, name) {
   const state = await wallet.getAccountState();
   if (state.committed.balances.ETH) {
     console.log(
-      `Commited ETH balance for ${wallet.address()}(${name}): ${ethers.utils.formatEther(
+      `Committed ETH balance for ${wallet.address()}(${name}): ${ethers.utils.formatEther(
         state.committed.balances.ETH
       )}`
     );
   } else {
-    console.log(`Commited ETH balance for ${wallet.address()}(${name}): 0`);
+    console.log(`Committed ETH balance for ${wallet.address()}(${name}): 0`);
   }
   if (state.verified.balances.ETH) {
     console.log(
